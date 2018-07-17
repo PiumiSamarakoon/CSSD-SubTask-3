@@ -8,136 +8,158 @@ package Controllers;
 import Models.JourneyList;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.Date;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author piumi
- */
+
 public class DynamicJourney implements Serializable {
-    
-      private static final long serialVersionUID = 1L;
-      
-//    private static Account account;
-    static int dynamicJourneyID;
-    static String source;
-    static String destination;
-    static Date date;
-    static String time;
-    
-     static int journeyCount = 0;
+
+    private static final long serialVersionUID = 1L;
+
+     //declare variables
+    int DynamicId;
+    public String source;
+    public String destination;
+    public String date;
+    public String time;
 
     
+    private static int journeycount = 0;
     
-
-    public DynamicJourney(String source, String destination, Date date, String time) {
-       // initialize variables
-            this.source = source;
-            this.destination = destination;
-            this.date=date;
-            this.time=time;
-//            this.account=account;
-            
-            dynamicJourneyID=++journeyCount;
-    }
-
-    
-      public static String getSource() {
-		return source;
-	}
-
-    public void setSource(String source) {
-		this.source = source;
-	}
-    
-    public static String getDestination() {
-		return destination;
-	}
-
-   
-    public void setDestination(String destination) {
-		this.destination = destination;
-	}
+    //constructor
+    public DynamicJourney(String source, String destination, String date, String time) {
         
-    
-    public static String getTime() {
-		return time;
-	}
-
-    
-    public void setTime(String time) {
-		this.time = time;
-	}
-   
-    public static Date getDate() {
-		return date;
-	}
-
-    public void setDate(Date date) {
-		DynamicJourney.date = date;
-	}
-
-  
-    public void setJourneyCount(int JourneyCount) {
-        DynamicJourney.journeyCount = JourneyCount;
+        //initialize variables
+        this.source = source;
+        this.destination = destination;
+        this.date = date;
+        this.time = time;
+        DynamicId=++journeycount;
+        
+        
     }
-   
-    public static int getJourneyCount() {
-            return journeyCount;
+
+    
+    
+    public DynamicJourney() {
+        throw new UnsupportedOperationException(); }
+
+    
+    /**
+     *
+     * @return DynamicId
+     */
+    public int getDynamicId() {
+        return DynamicId;
     }
     
-//     public String getAccountID() {
-//      return account. accID;
-//    }
-//
-//    public void setAccountID(Account account){
-//            this.account = account;
-//    }
+    /**
+     *
+     * @param DynamicId
+     */
+    public void setDynamicId(int DynamicId){
+            this.DynamicId = DynamicId ;
+    }
     
-           @Override
+    
+    /**
+     *
+     * @return time
+     */
+    public String getTime() {
+        return time;
+    }
+
+    /**
+     *
+     * @param time
+     */
+    public void settime(String time){
+            this.time = time ;
+    }
+    
+    
+    /**
+     *
+     * @return date
+     */
+    public String getDate() {
+        return date;
+    }
+
+   /**
+     *
+     * @param destination
+     */
+    public void destination(String destination){
+            this.destination = destination ;
+    }
+     
+    /**
+     *
+     * @return destination
+     */
+    public String getDestination() {
+        return destination;
+    }
+
+    
+    
+    /**
+     *
+     * @return source
+     */
+    public String getSource() {
+        return source;
+    }
+
+    @Override
     public String toString() {
-     
-         return " Dynamic Journey ID: "+ dynamicJourneyID +" Source : "+source+" Destination : "+destination+" Date : "+date+"Time :"+
-                 time;
-     }
-     
-     private static class Serialization {
+
+        return "dynamicid " + DynamicId + "\nsource " + source + "\ndestination " + destination + "\ndate " + date
+                + "\ntime " + time;
+    }
+
+    
+       private static class Serialization {
 	
-	public static void serializeObject(JourneyList<DynamicJourney> journeyList) throws IOException{
+        //serialization code
+	public static void serialize(JourneyList<DynamicJourney> JourneyList) throws IOException{
 		
-		FileOutputStream fos = new FileOutputStream(new File("DynamicJourney.txt"));
+		FileOutputStream fos = new FileOutputStream(new File("journey.txt"));
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		oos.writeObject(journeyList);
+		oos.writeObject(JourneyList);
 		oos.flush();
 		oos.close();
 	}
-	
+	//deserialization code
 	public static JourneyList<DynamicJourney> deserializeObject() throws IOException, ClassNotFoundException{
 		
-		FileInputStream fis = new FileInputStream(new File("DynamicJourney.txt"));
+		FileInputStream fis = new FileInputStream(new File("journey.txt"));
 		ObjectInputStream ois = new ObjectInputStream(fis);
-		JourneyList<DynamicJourney> journeyList = (JourneyList<DynamicJourney>)ois.readObject();
+		JourneyList<DynamicJourney> JourneyList = (JourneyList<DynamicJourney>)ois.readObject();
 		ois.close();
-		return journeyList;
+		return JourneyList;
 	}
-
-}          
-
-     public static void main(String[] args) {
+       }
+       
+public static void main(String[] args) {
         
-              
-	JourneyList<DynamicJourney> journeyList = new JourneyList<DynamicJourney>();
+            
+           
+             
+	JourneyList<DynamicJourney> journeylist = JourneyList.getInstance();
 		
 		try {
-			DynamicJourney.Serialization.serializeObject(journeyList);
+			DynamicJourney.Serialization.serialize(journeylist);
 
-			for (DynamicJourney journey : DynamicJourney.Serialization.deserializeObject()) {
-				System.out.println(journey);
+			for (DynamicJourney cost : DynamicJourney.Serialization.deserializeObject()) {
+				System.out.println(cost);
 			}
 			
 		} catch (IOException e) {
@@ -146,9 +168,8 @@ public class DynamicJourney implements Serializable {
 			e.printStackTrace();
 		}
 
-	}
-	
-		
- 
-    
 }
+}
+
+
+     

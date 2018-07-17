@@ -2,25 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Controllers/Email_Token.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_Payment.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_Main.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_Email.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_ReservationDetails.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/test/Controllers/PaymentManagerTest.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Controllers/Account.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/Select_Device.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_CreateToken.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Controllers/User.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_JourneySchedule.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_CardPayment.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Controllers/Mobile_Token.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/test/Controllers/ExternalPaymentValidatorTest.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_Login.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_Mobile.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Controllers/Token.java</file>
-            <file>file:/C:/Users/piumi/Documents/NetBeansProjects/Transport%20Ticketing/src/Views/MobileApp_SignUp.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
