@@ -169,6 +169,41 @@ public static void main(String[] args) {
 		}
 
 }
+
+
+
+    public static void addDestinationstop(String destination_stop){
+     
+        JourneyList<DynamicJourney> joureny = null;        //initialize offerArr
+        joureny = new JourneyList<DynamicJourney>();       //create new offerArr
+        joureny = (JourneyList<DynamicJourney>) deserialize(file1);  //deserialize file
+
+        for (int i = 0; i < joureny.size(); i++) {
+            DynamicJourney temp = (DynamicJourney)joureny.get(i);
+                if (destination_stop.equals(temp.getDestination())) {
+                  
+               //   GateAccountDetails.destinationbox.setText(String.valueOf(temp.getdestination()));
+                  
+                  JOptionPane.showMessageDialog(null, "CompletenJourney.. Thank you..");
+            }
+        }
+    }
+    //method to check journeys
+    public static void checkjourneycomplete(String destination_stop){
+     
+        JourneyList<DynamicJourney> joureny = null;        //initialize offerArr
+        joureny = new JourneyList<DynamicJourney>();       //create new offerArr
+        joureny = (JourneyList<DynamicJourney>) deserialize(file1);  //deserialize file
+
+        for (int i = 0; i < joureny.size(); i++) {
+            DynamicJourney temp = (DynamicJourney) joureny.get(i);
+                if ( destination_stop.equals(temp.getDestination())) {
+                
+                 // GateAccountDetails.destinationbox.setText(String.valueOf(temp.getdestination()));
+                  JOptionPane.showMessageDialog(null, "CompletenJourney.. Thank you..");
+            }
+        }
+    }
 }
 
 

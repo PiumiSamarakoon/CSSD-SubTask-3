@@ -155,6 +155,24 @@ public class AccountRegistry {
 
             
     }
+     
+     
+       public static void verifyAccount(String SerialNo){
+        
+          // TransactionList <TransactionRecord> recArr = new TransactionList<TransactionRecord>();
+          TransactionList<TransactionRecord> recArr = null;       //declare accArr 
+          recArr = new TransactionList<TransactionRecord>();         //create new accArr 
+          recArr = (TransactionList<TransactionRecord>) DeserializeFile(file2);
+          
+          for(int i=0; i<recArr.size();i++){
+              TransactionRecord temp = (TransactionRecord) recArr.get(i);
+              if(SerialNo.equals(temp.getSerialNo())){
+              
+           //  ExitGate_Stop_journey.idbox.setText(String.valueOf(temp.getSerialNo()));
+                   
+              }
+          }
+    }
     
     AccountList<Account> accounts = new AccountList<Account>();
 
